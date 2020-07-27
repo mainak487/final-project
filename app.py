@@ -25,7 +25,8 @@ def login():
 @app.route('/register')
 def about():
     pic2 = os.path.join(app.config['UPLOAD_FOLDER'], 'sih.jpeg')
-    return render_template('register.html',user_image = pic2)
+    logo2 = os.path.join(app.config['UPLOAD_FOLDER'], 'logo.png')
+    return render_template('register.html',user_image = pic2,logo_image2 = logo2)
 
 
 @app.route('/home')
