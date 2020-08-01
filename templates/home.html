@@ -45,10 +45,10 @@
   </div>
   <h5 align="center">Welcome {{ email }} to Home Page</h5><br>
 
-  <div class="container py-5">
+  <div class="container py-5" name="Form">
     <form>
-      <h5>FILLUP YOUR CURENT MEDICAL STATUS</h5>
-      <div class="form-group">
+      <h5><i>FILLUP YOUR CURENT MEDICAL STATUS</i></h5>
+      <div class="form-group pt-4">
         <label for="name" name="name">Name</label>
         <input type="text" class="form-control" id="name" placeholder="Enter your name">
       </div>
@@ -63,10 +63,10 @@
       <div class="form-group">
         <label for="days" name="days">How many days you taking those Antibiotics?</label>
         <input type="int" class="form-control" id="days" placeholder="Enter the period">
-      </div>
-      <hr>
-      <h5>FILLUP YOUR PAST MEDICAL STATUS</h5>
-      <div class="form-group">
+      </div><br>
+      <hr><br>
+      <h5><i>FILLUP YOUR MEDICAL STATUS HYSTORY</i></h5>
+      <div class="form-group pt-4">
         <label for="taken_antibiotics" name="taken_antibiotics">Which Antibiotics you taken?</label>
         <input type="text" class="form-control" id="taken_antibiotics" placeholder="Enter Antibiotics you taken">
       </div>
@@ -75,8 +75,8 @@
         <input type="int" id="past_age" class="form-control" placeholder="Enter your age">
       </div>
       <div class="form-group">
-        <label for="days" name="days">How many days you taking those Antibiotics?</label>
-        <input type="int" class="form-control" id="days" placeholder="Enter the period">
+        <label for="past_days" name="past_days">How many days you taken those Antibiotics?</label>
+        <input type="int" class="form-control" id="past_days" placeholder="Enter the period">
       </div>
       <button type="submit" class="btn btn-primary">Submit</button>
     </form>
