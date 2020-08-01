@@ -36,7 +36,7 @@ def home():
     else:
         return redirect('/')
 
-@app.route('/login_validation',methods=['POST'])
+@app.route('/login_validation',methods=['GET','POST'])
 def login_validation():
     email=request.form.get('email')
     password=request.form.get('password')
@@ -52,7 +52,7 @@ def login_validation():
     else:
         return redirect('/')
 
-@app.route('/add_user',methods=['POST'])
+@app.route('/add_user',methods=['GET','POST'])
 def add_user():
     name=request.form.get('uname')
     email=request.form.get('uemail')
