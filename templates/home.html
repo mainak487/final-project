@@ -1,69 +1,169 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <title>HomePage</title>
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
- <link rel="stylesheet" href="css/bootstrap.min.css">
+  <meta charset="UTF-8">
+  <title>HomePage</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+    integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+    crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="css/bootstrap.min.css">
 </head>
+
 <body>
-<div class="container-fluid">
-<nav class="navbar navbar-dark bg-dark">
-          <a class="navbar-brand" href="#">Tech Warr@iors</a>
-        <button type="button" class="btn btn-warning" onclick="window.location = '/dropsession';" type="submit">LOGOUT</button>
-    </nav><br><h5 align="center">Welcome {{ email }} to Home Page</h5><br>
-<div class="card text-white bg-primary mb-3" style="max-width: 180rem;">
-  <div class="card-header">Header</div>
-  <div class="card-body">
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+  <div class="container-fluid px-0" name="Navbar">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <a class="navbar-brand" href="/home">Tech Warr@iors</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+  
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="/home">Home <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">About Us</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Contact Us</a>
+          </li>
+        </ul>
+        <form class="form-inline my-2 my-lg-0">
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Logout</button>
+        </form>
+      </div>
+    </nav>
   </div>
-</div>
-<div class="card text-white bg-secondary mb-3" style="max-width: 180rem;">
-    <img src="{{ user_image1 }}" alt="" class="img-fluid">
-  <div class="card-header">Header</div>
-  <div class="card-body">
-    <h5 class="card-title">Secondary card title</h5>
-      <form method="post" action="/upload" enctype="multipart/form-data">
+
+  <div class="container py-5">
+    <form>
+      <h5>FILLUP YOUR CURENT MEDICAL STATUS</h5>
+      <div class="form-group">
+        <label for="name" name="name">Name</label>
+        <input type="text" class="form-control" id="name" placeholder="Enter your name">
+      </div>
+      <div class="form-group">
+        <label for="age" name="age">Age</label>
+        <input type="int" id="age" class="form-control" placeholder="Enter your age">
+      </div>
+      <div class="form-group">
+        <label for="taking_antibiotics" name="taking_antibiotics">Which Antibiotics you taking now?</label>
+        <input type="text" class="form-control" id="taking_antibiotics" placeholder="Enter Antibiotics you taking now">
+      </div>
+      <div class="form-group">
+        <label for="days" name="days">How many days you taking those Antibiotics?</label>
+        <input type="int" class="form-control" id="days" placeholder="Enter the period">
+      </div>
+      <hr>
+      <h5>FILLUP YOUR PAST MEDICAL STATUS</h5>
+      <div class="form-group">
+        <label for="taken_antibiotics" name="taken_antibiotics">Which Antibiotics you taken?</label>
+        <input type="text" class="form-control" id="taken_antibiotics" placeholder="Enter Antibiotics you taken">
+      </div>
+      <div class="form-group">
+        <label for="past_age" name="past_age">In which age you taken those Antibiotics?</label>
+        <input type="int" id="past_age" class="form-control" placeholder="Enter your age">
+      </div>
+      <div class="form-group">
+        <label for="days" name="days">How many days you taking those Antibiotics?</label>
+        <input type="int" class="form-control" id="days" placeholder="Enter the period">
+      </div>
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!-- <div class="container-fluid">
+    <nav class="navbar navbar-dark bg-dark">
+      <a class="navbar-brand" href="#">Tech Warr@iors</a>
+      <button type="button" class="btn btn-warning" onclick="window.location = '/dropsession';"
+        type="submit">LOGOUT</button>
+    </nav><br>
+    <h5 align="center">Welcome {{ email }} to Home Page</h5><br>
+    <div class="card text-white bg-primary mb-3" style="max-width: 180rem;">
+      <div class="card-header">Header</div>
+      <div class="card-body">
+        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+          content.</p>
+      </div>
+    </div>
+    <div class="card text-white bg-secondary mb-3" style="max-width: 180rem;">
+      <img src="{{ user_image1 }}" alt="" class="img-fluid">
+      <div class="card-header">Header</div>
+      <div class="card-body">
+        <h5 class="card-title">Secondary card title</h5>
+        <form method="post" action="/upload" enctype="multipart/form-data">
           <label for="inputFile">File Input</label>
           <input type="file" name="inputfile">
-          <button type="submit" class=""btn btn-default">Submit</button>
-      </form>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-  </div>
-</div>
-<div class="card text-white bg-success mb-3" style="max-width: 180rem;">
-  <div class="card-header">Header</div>
-  <div class="card-body">
-    <h5 class="card-title">Success card title</h5>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-  </div>
-</div>
-<div class="card text-white bg-danger mb-3" style="max-width: 180rem;">
-  <div class="card-header">Header</div>
-  <div class="card-body">
-    <h5 class="card-title">Danger card title</h5>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-  </div>
-</div>
-<div class="card text-white bg-warning mb-3" style="max-width: 180rem;">
-  <div class="card-header">Header</div>
-  <div class="card-body">
-    <h5 class="card-title">Warning card title</h5>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-  </div>
-</div>
-<div class="card text-white bg-info mb-3" style="max-width: 180rem;">
-  <div class="card-header">Header</div>
-  <div class="card-body">
-    <h5 class="card-title">Info card title</h5>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-  </div>
-</div>
-<script src="js/jQuery.js"></script>
-<script src="js/bootstrap.min.js"></script>
-</div>
+          <button type="submit" class="" btn btn-default">Submit</button>
+        </form>
+        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+          content.</p>
+      </div>
+    </div>
+    <div class="card text-white bg-success mb-3" style="max-width: 180rem;">
+      <div class="card-header">Header</div>
+      <div class="card-body">
+        <h5 class="card-title">Success card title</h5>
+        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+          content.</p>
+      </div>
+    </div>
+    <div class="card text-white bg-danger mb-3" style="max-width: 180rem;">
+      <div class="card-header">Header</div>
+      <div class="card-body">
+        <h5 class="card-title">Danger card title</h5>
+        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+          content.</p>
+      </div>
+    </div>
+    <div class="card text-white bg-warning mb-3" style="max-width: 180rem;">
+      <div class="card-header">Header</div>
+      <div class="card-body">
+        <h5 class="card-title">Warning card title</h5>
+        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+          content.</p>
+      </div>
+    </div>
+    <div class="card text-white bg-info mb-3" style="max-width: 180rem;">
+      <div class="card-header">Header</div>
+      <div class="card-body">
+        <h5 class="card-title">Info card title</h5>
+        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+          content.</p>
+      </div>
+    </div>
+    <script src="js/jQuery.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+  </div> -->
 </body>
+
 </html>
